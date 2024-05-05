@@ -7,7 +7,8 @@ function addToTerminal(text) {
 }
 
 function processCommand(command) {
-  if (command === "clear") {clear();}
+  if (command === "support") {support();}
+  else if (command === "clear") {clear();}
   else if (command === "exit") {exit();}
   else if (command === "help") {help();}
   else if (command === "github") {github();}

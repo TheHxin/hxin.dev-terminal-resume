@@ -15,6 +15,7 @@ const help_text =
 <pre>
     help -> shows this menu
     github -> opens TheHxin's GitHub page
+    support -> support with buying me a coffee
     neofetch -> shows the ascii art
     clear -> clears the screen
     exit -> exists the terminal (closes this page)
@@ -23,14 +24,17 @@ const help_text =
 /* ---------------------------------------------------------------------------------------- */
 
 
-
-
+function support(){
+    addToTerminal("<a href='https://www.buymeacoffee.com/hxin' target='_blank'>Buy Me A Coffee</a>")
+    addToTerminal("<span> Thanks for your support ! </span>")
+    window.open("https://www.buymeacoffee.com/hxin","_blank")
+}
 function clear(){
     const terminal = document.getElementById('terminal')
     terminal.innerHTML = '';
 }
 function exit(){
-    close()
+    window.close()
 }
 function neofetch(){
     terminal.innerHTML += asciiart_text
