@@ -1,13 +1,23 @@
 const terminal = document.getElementById('terminal');
 var lastInputLine = null;
 
+const welcome_text = 
+`<pre style="color: red;">
+                  Please enter "help" for the list of commands 
+</pre>`;
+
+function welcome(){
+  addToTerminal(welcome_text);
+}
+
 function addToTerminal(text) {
   terminal.innerHTML += '<p style="margin:0;">' + text + '</p>';
   terminal.scrollTop = terminal.scrollHeight;
 }
 
 function processCommand(command) {
-  if (command === "support") {support();}
+  if (command === "email") {email();}
+  else if (command === "support") {support();}
   else if (command === "clear") {clear();}
   else if (command === "exit") {exit();}
   else if (command === "help") {help();}
@@ -42,5 +52,5 @@ function addInputLine() {
     }
   });
 }
-
+welcome();
 addInputLine();

@@ -17,6 +17,7 @@ const help_text =
     github -> opens TheHxin's GitHub page
     support -> support with buying me a coffee
     neofetch -> shows the ascii art
+    email -> In case you want to contact me, you can just send an email
     clear -> clears the screen
     exit -> exists the terminal (closes this page)
 </pre>
@@ -24,6 +25,10 @@ const help_text =
 /* ---------------------------------------------------------------------------------------- */
 
 
+function email(){
+    addToTerminal("<a href='mailto:radin@hxin.dev'>Email Me!</a>")
+    window.open("mailto:radin@hxin.dev","_blank")
+}
 function support(){
     addToTerminal("<a href='https://www.buymeacoffee.com/hxin' target='_blank'>Buy Me A Coffee</a>")
     addToTerminal("<span> Thanks for your support ! </span>")
@@ -32,6 +37,7 @@ function support(){
 function clear(){
     const terminal = document.getElementById('terminal')
     terminal.innerHTML = '';
+    addToTerminal(welcome_text);
 }
 function exit(){
     window.close()
